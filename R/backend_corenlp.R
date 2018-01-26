@@ -309,6 +309,8 @@ init_corenlp_backend <- function() {
   for (i in seq_along(keys))
     prop$setProperty(keys[i], values[i])
 
+  prop$setProperty("ner.useSUTime", "0")
+  
   # Load the NLP pipeline (quietly, if desired)
   if (!volatiles$corenlp$verbose) {
     err <- rJava::.jfield("java/lang/System", , "err")
