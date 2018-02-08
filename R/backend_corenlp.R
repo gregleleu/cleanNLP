@@ -139,7 +139,8 @@ cnlp_init_corenlp <- function(language, anno_level = 2, lib_location = NULL,
   }
   if (language == "en" & anno_level == 2) {
     string <- paste("tokenize, ssplit, pos, lemma, parse, depparse,",
-                    "sentiment, ner, mention, entitymentions, natlog",
+                    # "sentiment, ner, mention, entitymentions, natlog",
+                    "sentiment, ner, relation, natlog",
                     collapse = "")
     setup_corenlp_backend_raw("annotators", string, clear = TRUE)
     #.setup_corenlp_backend_raw("parse.model",
